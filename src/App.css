@@ -1,0 +1,18 @@
+#root {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.skeleton {
+  background-color: #f0f0f0;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200px 0;
+  }
+  100% {
+    background-position: calc(200px + 100%) 0;
+  }
+}

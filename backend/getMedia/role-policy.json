@@ -1,0 +1,26 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "QueryTableAndItsIndexes",
+      "Effect": "Allow",
+      "Action": ["dynamodb:Query"],
+      "Resource": [
+        "arn:aws:dynamodb:${AWS_REGION}:${AWS_ACCOUNT_ID}:table/${MEDIA_TABLE}",
+        "arn:aws:dynamodb:${AWS_REGION}:${AWS_ACCOUNT_ID}:table/${MEDIA_TABLE}/index/*"
+      ]
+    },
+    {
+      "Sid": "ScanTable",
+      "Effect": "Allow",
+      "Action": ["dynamodb:Scan"],
+      "Resource": "arn:aws:dynamodb:${AWS_REGION}:${AWS_ACCOUNT_ID}:table/${MEDIA_TABLE}"
+    },
+    {
+      "Sid": "ReadMediaObjects",
+      "Effect": "Allow",
+      "Action": ["s3:GetObject"],
+      "Resource": "arn:aws:s3:::${MEDIA_BUCKET}/*"
+    }
+  ]
+}
